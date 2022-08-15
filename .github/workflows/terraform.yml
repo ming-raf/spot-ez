@@ -1,6 +1,6 @@
 name: "Comment a Plan on a PR"
 
-on: [push, pull_request]
+on: [push]
 
 permissions:
   contents: read
