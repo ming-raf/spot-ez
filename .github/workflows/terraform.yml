@@ -13,18 +13,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
       - uses: actions/setup-node@v1
         with:
           node-version: "16"
-
       - name: Install dependencies
         run: yarn install
-
-      # Remove this step if you don't have any
-      # - name: Run unit tests
-      #  run: yarn test
-
       - name: Run Terraform CDK
         uses: hashicorp/terraform-cdk-action@v0.1.0
         with:
