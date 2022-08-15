@@ -1,10 +1,6 @@
 name: "Comment a Plan on a PR"
 
-on:
-  push:
-    branches:
-    - "main"
-  pull_request:
+on: [push, pull_request]
 
 permissions:
   contents: read
@@ -37,7 +33,7 @@ jobs:
 
       - name: Terraform Plan
         run: terraform plan -input=false
-        
+
       - name: Terraform Apply
         if: github.ref == 'refs/heads/"main"' && github.event_name == 'push'
         run: terraform apply -auto-approve -input=false
